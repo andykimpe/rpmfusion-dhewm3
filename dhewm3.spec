@@ -1,21 +1,22 @@
 %global commit 6d8108c508a0bde5c2bea4dec58fa2ca583a16e2
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
+%define branch el6
 
 Name:           dhewm3
 Version:        1.3.1.1304
-Release:        21.git%{shortcommit}%{?dist}
+Release:        22.git%{shortcommit}%{?dist}
 Summary:        Dhewm's Doom 3 engine
 License:        GPLv3+ and BSD
 URL:            https://github.com/dhewm/%{name}
 
 Source0:        https://github.com/dhewm/dhewm3/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
-Source1:        %{name}-README.txt
+Source1:        https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-README.txt
 # Compatibility with stock Doom 3 has been removed long ago and we don't ship
 # Doom 3 / Doom 3 Resurrection of Evil content.
-Patch0:         %{name}-no-cdkey.patch
-Patch1:         %{name}-def-eax-on.patch
-Patch2:         %{name}-def-fixedtic.patch
-Patch3:         %{name}-carmack.patch
+Patch0:         https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-no-cdkey.patch
+Patch1:         https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-def-eax-on.patch
+Patch2:         https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-def-fixedtic.patch
+Patch3:         https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-carmack.patch
 
 # Generic provider for Doom 3 engine based games
 Provides:       doom3-engine = 1.3.1.1304
