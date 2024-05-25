@@ -1,4 +1,5 @@
 %global __cmake_in_source_build 1
+%define branch el8
 
 %global commit0 bbe30e300c1618207f447927b0accedd51ab8769
 %global date 20201102
@@ -20,8 +21,8 @@ Source0:        https://github.com/dhewm/%{name}/archive/%{version}.tar.gz#/%{na
 Source0:        https://github.com/dhewm/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 %endif
 
-Source1:        %{name}-README.txt
-Patch0:         %{name}-no-cdkey.patch
+Source1:        https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-README.txt
+Patch0:         https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-no-cdkey.patch
 
 ExcludeArch:    ppc64le
 
