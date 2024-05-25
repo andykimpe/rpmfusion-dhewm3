@@ -1,4 +1,5 @@
 %global __cmake_in_source_build 1
+%define branch f39
 
 %global commit0 bbe30e300c1618207f447927b0accedd51ab8769
 %global date 20201102
@@ -7,7 +8,7 @@
 
 Name:           dhewm3
 Version:        1.5.1
-Release:        11%{!?tag:.%{date}git%{shortcommit0}}%{?dist}
+Release:        12%{!?tag:.%{date}git%{shortcommit0}}%{?dist}
 Summary:        Dhewm's Doom 3 engine
 License:        GPLv3+ with exceptions
 URL:            https://dhewm3.org/
@@ -18,8 +19,8 @@ Source0:        https://github.com/dhewm/%{name}/archive/%{version}.tar.gz#/%{na
 Source0:        https://github.com/dhewm/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 %endif
 
-Source1:        %{name}-README.txt
-Patch0:         %{name}-no-cdkey.patch
+Source1:        https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-README.txt
+Patch0:         https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-no-cdkey.patch
 
 ExcludeArch:    ppc64le
 
