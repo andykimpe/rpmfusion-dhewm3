@@ -2,6 +2,7 @@
 %global date 20191103
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 #global tag %{version}
+%define branch el7
 
 Name:           dhewm3
 Version:        1.5.1
@@ -16,8 +17,8 @@ Source0:        https://github.com/dhewm/%{name}/archive/%{version}.tar.gz#/%{na
 Source0:        https://github.com/dhewm/%{name}/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 %endif
 
-Source1:        %{name}-README.txt
-Patch0:         %{name}-no-cdkey.patch
+Source1:        https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-README.txt
+Patch0:         https://github.com/andykimpe/rpmfusion-dhewm3/raw/%{branch}/%{name}-no-cdkey.patch
 
 ExcludeArch:    ppc64le
 
